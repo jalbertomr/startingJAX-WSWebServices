@@ -10,30 +10,30 @@
 <message name="addResponse">
 <part name="parameters" element="tns:addResponse"/>
 </message>
-<message name="substract">
-<part name="parameters" element="tns:substract"/>
-</message>
-<message name="substractResponse">
-<part name="parameters" element="tns:substractResponse"/>
-</message>
 <message name="hello">
 <part name="parameters" element="tns:hello"/>
 </message>
 <message name="helloResponse">
 <part name="parameters" element="tns:helloResponse"/>
 </message>
+<message name="substract">
+<part name="parameters" element="tns:substract"/>
+</message>
+<message name="substractResponse">
+<part name="parameters" element="tns:substractResponse"/>
+</message>
 <portType name="CalculatorWS">
 <operation name="add">
 <input wsam:Action="http://calculator.me.org/CalculatorWS/addRequest" message="tns:add"/>
 <output wsam:Action="http://calculator.me.org/CalculatorWS/addResponse" message="tns:addResponse"/>
 </operation>
-<operation name="substract">
-<input wsam:Action="http://calculator.me.org/CalculatorWS/substractRequest" message="tns:substract"/>
-<output wsam:Action="http://calculator.me.org/CalculatorWS/substractResponse" message="tns:substractResponse"/>
-</operation>
 <operation name="hello">
 <input wsam:Action="http://calculator.me.org/CalculatorWS/helloRequest" message="tns:hello"/>
 <output wsam:Action="http://calculator.me.org/CalculatorWS/helloResponse" message="tns:helloResponse"/>
+</operation>
+<operation name="substract">
+<input wsam:Action="http://calculator.me.org/CalculatorWS/substractRequest" message="tns:substract"/>
+<output wsam:Action="http://calculator.me.org/CalculatorWS/substractResponse" message="tns:substractResponse"/>
 </operation>
 </portType>
 <binding name="CalculatorWSPortBinding" type="tns:CalculatorWS">
@@ -47,7 +47,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="substract">
+<operation name="hello">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -56,7 +56,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="hello">
+<operation name="substract">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

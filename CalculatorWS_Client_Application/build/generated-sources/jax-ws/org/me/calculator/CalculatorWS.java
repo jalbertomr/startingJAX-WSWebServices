@@ -44,6 +44,21 @@ public interface CalculatorWS {
 
     /**
      * 
+     * @param txt
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "hello", targetNamespace = "http://calculator.me.org/", className = "org.me.calculator.Hello")
+    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://calculator.me.org/", className = "org.me.calculator.HelloResponse")
+    @Action(input = "http://calculator.me.org/CalculatorWS/helloRequest", output = "http://calculator.me.org/CalculatorWS/helloResponse")
+    public String hello(
+        @WebParam(name = "txt", targetNamespace = "")
+        String txt);
+
+    /**
+     * 
      * @param i
      * @param j
      * @return
@@ -59,20 +74,5 @@ public interface CalculatorWS {
         int i,
         @WebParam(name = "j", targetNamespace = "")
         int j);
-
-    /**
-     * 
-     * @param txt
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "hello", targetNamespace = "http://calculator.me.org/", className = "org.me.calculator.Hello")
-    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://calculator.me.org/", className = "org.me.calculator.HelloResponse")
-    @Action(input = "http://calculator.me.org/CalculatorWS/helloRequest", output = "http://calculator.me.org/CalculatorWS/helloResponse")
-    public String hello(
-        @WebParam(name = "txt", targetNamespace = "")
-        String txt);
 
 }
